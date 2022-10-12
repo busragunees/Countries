@@ -8,22 +8,41 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet weak var homeTableView: UITableView!
+    
+    private let countryCellReuseIdentifier = "countryTableViewCell"
+    private var items: [CountryCellViewModel] = []
+    private let viewModel = CountryListViewModel()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// For tableView delegate and register func
+    func setupUI() {
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+       // viewModel.viewDelegate = self
+        registerTableView()
     }
-    */
+    private func registerTableView() {
+        self.homeTableView.register(.init(nibName: "CountriesTableViewCell", bundle: nil), forCellReuseIdentifier: countryCellReuseIdentifier)
+    }
+}
 
+// TableView functions
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didClickItem(at: indexPath.row)
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: countryCellReuseIdentifier) as! CountriesTableViewCell
+        cell.countryNameLabel.text = items[indexPath.row]
+        return cell
+    }
 }

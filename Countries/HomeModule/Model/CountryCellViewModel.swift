@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct CountryCellViewModel {
+    var countryName: String?
+}
