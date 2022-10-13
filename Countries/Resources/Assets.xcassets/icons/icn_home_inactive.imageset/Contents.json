@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icn_home_inactive.png",
+      "filename" : "home-boş.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icn_home_inactive@2x.png",
+      "filename" : "home-boş@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icn_home_inactive@3x.png",
+      "filename" : "home-boş@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

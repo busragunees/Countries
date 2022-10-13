@@ -51,7 +51,9 @@ class NetworkManager {
             }
         }
     }
-    
+    struct Empty: Encodable{
+        
+    }
     static func toParameters<T: Encodable>(model: T?) -> [String:AnyObject]?
     {
         if(model == nil)
@@ -84,6 +86,22 @@ class NetworkManager {
             {
             case .success(let model):
                 let countryModel = model as! CountryResponseModel
+                complition(countryModel)
+            case .failure(let error):
+                fail()
+                print("bu", error )
+                break
+            }
+        }
+    }
+    
+    public func getCountryDetails(countryId: String,complition: @escaping (CountryDetailResponseModel?) -> Void,fail:  @escaping()-> Void){
+        
+        NetworkManager.instance.fetch(HTTPMethod.get, url: "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/\(countryId)" , requestModel: Empty(), model:CountryDetailResponseModel.self ) { response in
+            switch(response)
+            {
+            case .success(let model):
+                let countryModel = model as! CountryDetailResponseModel
                 complition(countryModel)
             case .failure(let error):
                 fail()
