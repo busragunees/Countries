@@ -14,7 +14,6 @@ protocol DetailsViewModelProtocol:AnyObject{
     func showError()
 }
 
-
 class DetailsViewModel{
     
     weak var viewDelegate: DetailsViewModelProtocol?
@@ -22,10 +21,9 @@ class DetailsViewModel{
     func getCountryDetails(countryId: String){
         NetworkManager.instance.getCountryDetails(countryId: countryId) { detailResponse in
             print("detail", detailResponse!)
-        
+            self.viewDelegate?.didCellItemFetch(detailResponse?.data)
         } fail: {
             print("hata")
         }
-
     }
 }

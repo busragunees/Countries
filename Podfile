@@ -8,4 +8,5 @@ target 'Countries' do
   pod 'Kingfisher', '~> 7.3'
   pod 'Alamofire', '~> 5.6'
   pod 'SwiftyJSON', '~> 5.0'
+  pod 'SVGKit', '~> 3.0'
 end

@@ -12,14 +12,16 @@ class HomeViewController: UIViewController {
     private let countryCellReuseIdentifier = "countryTableViewCell"
     private var countries: [Country]? = []
     private let viewModel = HomeViewModel() //buraya ne vermek mantıklı?
-    
-    
+
+    var bgImage = UIImageView(image: UIImage(named: "view_bg"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         viewModel.getCountries()
-        
+        self.homeTableView.backgroundView = bgImage
+        bgImage.contentMode = .scaleToFill
+       
     }
 // For tableView delegate and register func
     func setupUI() {
@@ -51,22 +53,19 @@ extension HomeViewController: HomeViewModelProtocol {
     }
 }
 
-
 // TableView functions
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries?.count ?? 0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = self.storyboard?.instantiateViewController(withIdentifier: "detailIdentfy") as! DetailViewController
-        self.navigationController?.pushViewController(cell, animated: true)
-        
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailIdentfy") as! DetailViewController
+        detailVC.countryCode = countries?[indexPath.row].code
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: countryCellReuseIdentifier) as! CountriesTableViewCell
         cell.countryNameLabel.text = countries?[indexPath.row].name
-       // cell.backgroundColor = UIColor.white
         return cell
     }
-   
 }

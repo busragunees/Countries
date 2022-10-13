@@ -9,6 +9,8 @@ import UIKit
 
 class WebKitViewController: UIViewController {
 
+    var wikiURL: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

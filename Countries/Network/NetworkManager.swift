@@ -76,8 +76,7 @@ class NetworkManager {
         return try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
     }
     
-    //MARK: - get countries functions.
-    
+    //MARK: - get countries function.
     public func getCountries(complition: @escaping (CountryResponseModel?) -> Void,fail:  @escaping()-> Void){
         var requestModel = CountryListRequestModel(limit: "10")
         
@@ -94,7 +93,7 @@ class NetworkManager {
             }
         }
     }
-    
+    //MARK: - get countries detail function.
     public func getCountryDetails(countryId: String,complition: @escaping (CountryDetailResponseModel?) -> Void,fail:  @escaping()-> Void){
         
         NetworkManager.instance.fetch(HTTPMethod.get, url: "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/\(countryId)" , requestModel: Empty(), model:CountryDetailResponseModel.self ) { response in

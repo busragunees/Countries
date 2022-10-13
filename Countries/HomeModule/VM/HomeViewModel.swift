@@ -34,5 +34,4 @@ class HomeViewModel{
         }
     }
 }
-
 //-protokoller ile- apiden gelen countryResponse, HomeViewController'a aktarılır.

@@ -21,7 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7le-E5-G7E">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.28235294117647058" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B2A-ZK-J2C"/>
@@ -47,11 +47,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-sH-mSe">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUZ-Q6-pTo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUZ-Q6-pTo">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="391"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="391" id="JWu-iJ-jv1"/>
-                                    <constraint firstAttribute="width" constant="390" id="lhO-qc-E5L"/>
+                                    <constraint firstAttribute="height" constant="391" id="LcI-JS-tK7"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R84-KD-hwS">
@@ -69,6 +68,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="sGc-2r-8Gw" kind="show" id="niy-Sy-egJ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCz-4z-Wp0">
                                 <rect key="frame" x="16" y="455" width="358" height="106"/>
@@ -136,6 +138,7 @@
                             <constraint firstItem="hVN-sH-mSe" firstAttribute="trailing" secondItem="uBK-ho-hY5" secondAttribute="trailing" id="yBT-3w-A7A"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uH2-Up-zjW"/>
                     <connections>
                         <outlet property="countryCodeLabel" destination="yVk-UP-xFZ" id="6ib-93-OBb"/>
                         <outlet property="countryNameLabel" destination="2UO-5N-AIm" id="iUK-P2-FN9"/>
@@ -152,11 +155,11 @@
             <objects>
                 <viewController storyboardIdentifier="webKitIdentfy" id="sGc-2r-8Gw" customClass="WebKitViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bKF-6m-tbI">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UP-B9-VUs">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -207,11 +210,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lbv-M9-h1t">
                                 <rect key="frame" x="0.0" y="91" width="390" height="654"/>
-                                <color key="backgroundColor" name="iconsColor"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.28235294117647058" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C4F-dT-Agg"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lbv-M9-h1t" firstAttribute="top" secondItem="C4F-dT-Agg" secondAttribute="top" id="3wN-QF-HgD"/>
                             <constraint firstItem="lbv-M9-h1t" firstAttribute="trailing" secondItem="C4F-dT-Agg" secondAttribute="trailing" id="L7j-bV-5fa"/>
@@ -230,82 +233,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxc-iN-USm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1543.0769230769231" y="-242.41706161137441"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Zil-8K-7aN">
-            <objects>
-                <navigationController id="9UA-wY-TAN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZiF-7F-phu">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="2hp-Tc-9xb" kind="relationship" relationship="rootViewController" id="44c-2Q-dGm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zt3-KL-mNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4255" y="124"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="QdJ-RD-msL">
-            <objects>
-                <viewController id="2hp-Tc-9xb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IZi-tQ-Upa">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_worldMap" translatesAutoresizingMaskIntoConstraints="NO" id="4Vk-51-6eU">
-                                <rect key="frame" x="40" y="91" width="310" height="326"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="310" id="7Kc-kN-Gdl"/>
-                                    <constraint firstAttribute="height" constant="326" id="eue-Ey-JPJ"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Access all information about countries !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3A-qX-2ep">
-                                <rect key="frame" x="40" y="477" width="310" height="75"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-UZ-d9z">
-                                <rect key="frame" x="73" y="640" width="245" height="59"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="iEM-cU-RFX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Let's go">
-                                    <color key="titleColor" name="iconsColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QeC-kq-rQu"/>
-                        <color key="backgroundColor" name="iconsColor"/>
-                        <constraints>
-                            <constraint firstItem="c3A-qX-2ep" firstAttribute="top" secondItem="4Vk-51-6eU" secondAttribute="bottom" constant="60" id="9Ci-A6-grd"/>
-                            <constraint firstItem="QeC-kq-rQu" firstAttribute="trailing" secondItem="4Vk-51-6eU" secondAttribute="trailing" constant="40" id="9aw-3a-cCU"/>
-                            <constraint firstItem="YAA-UZ-d9z" firstAttribute="leading" secondItem="QeC-kq-rQu" secondAttribute="leading" constant="73" id="Ivu-aV-rF5"/>
-                            <constraint firstItem="4Vk-51-6eU" firstAttribute="leading" secondItem="QeC-kq-rQu" secondAttribute="leading" constant="40" id="Nkk-VT-PSg"/>
-                            <constraint firstItem="4Vk-51-6eU" firstAttribute="top" secondItem="IZi-tQ-Upa" secondAttribute="topMargin" id="ONb-KF-n4D"/>
-                            <constraint firstItem="c3A-qX-2ep" firstAttribute="leading" secondItem="QeC-kq-rQu" secondAttribute="leading" constant="40" id="Xjh-qX-aAd"/>
-                            <constraint firstItem="QeC-kq-rQu" firstAttribute="bottom" secondItem="YAA-UZ-d9z" secondAttribute="bottom" constant="111" id="dgl-Ep-94r"/>
-                            <constraint firstItem="QeC-kq-rQu" firstAttribute="trailing" secondItem="YAA-UZ-d9z" secondAttribute="trailing" constant="72" id="gRM-uJ-4S0"/>
-                            <constraint firstItem="QeC-kq-rQu" firstAttribute="trailing" secondItem="c3A-qX-2ep" secondAttribute="trailing" constant="40" id="j2R-RX-PzL"/>
-                            <constraint firstItem="YAA-UZ-d9z" firstAttribute="top" secondItem="c3A-qX-2ep" secondAttribute="bottom" constant="106" id="uI5-9o-Gt8"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="nRl-NC-Bey"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-NU-40a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3429" y="124"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aUB-52-Z1S">
@@ -332,7 +259,6 @@
         <image name="icn_home_inactive" width="30" height="30"/>
         <image name="icn_like" width="30" height="30"/>
         <image name="icn_like_active" width="30" height="30"/>
-        <image name="icn_worldMap" width="512" height="512"/>
         <image name="view_bg" width="375" height="812"/>
         <namedColor name="iconsColor">
             <color red="0.85098039215686272" green="0.49019607843137253" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
