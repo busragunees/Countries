@@ -63,9 +63,36 @@ extension StorageManager {
         completion(item)
     }
     
-    func deleteCountry(item: CountryEntity) {
-        context.delete(item)
-        saveContext()
+    func deleteCountry(item: Country) {
+        fetchDataById(entity: CountryEntity.self, id: item.code!) { result in
+            switch result{
+            case.success(let entity):
+                self.deleteCountry(item:(entity as? CountryEntity)!)
+                break
+            case .failure(_):
+                break
+            }
+        }
     }
+    func deleteCountry(item: CountryEntity) {
+        self.context.delete(item)
+        self.saveContext()
+    }
+    
+    func fetchDataById<T:NSManagedObject>(entity:T.Type,id:String,completion: (Result<Any?, Error>) -> Void)  {
+        let fetchRequest = T.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(
+            format: "code == %@", id
+        )
+        do {
+            let item = try context.fetch(fetchRequest)
+            
+            completion(.success(item.first))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
 }
 

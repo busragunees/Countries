@@ -21,10 +21,14 @@ class CountriesTableViewCell: UITableViewCell {
     
     func setItem(item: Country) {
         countryNameLabel.text = item.name
-        self.saveIconImage.callback = {
-            StorageManager.shared.addCountry(item) { CountryEntity in
-                
-            }
+        if item.isSaved == true {
+            saveIconImage.image = UIImage(named: "icn_like_active")
+        }else{
+            saveIconImage.image = UIImage(named: "icn_like")
         }
     }
 }
+
+
+/*StorageManager.shared.addCountry(item) { CountryEntity in
+}*/

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SavedViewModelProtocol: AnyObject{
-    func didCellItemFetch(_ items: [CountryEntity]?)
+    func didFecthCountriesFromDB(_ items: [CountryEntity]?)
 }
 
 class SavedViewModel{
@@ -21,7 +21,7 @@ class SavedViewModel{
                 case .success(let list):
                     let items = (list as? [CountryEntity])
                     if let items = items{
-                        self.viewDelegate?.didCellItemFetch(items)
+                        self.viewDelegate?.didFecthCountriesFromDB(items)
                     }
                 case .failure(_): break
                 }

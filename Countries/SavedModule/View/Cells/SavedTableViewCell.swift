@@ -8,7 +8,11 @@
 import UIKit
 
 class SavedTableViewCell: UITableViewCell {
-    @IBOutlet weak var saveIconImage: UIImageView!
+    @IBOutlet weak var saveIconImage: UIImageView!{
+        didSet {
+            self.saveIconImage.tappable = true
+        }
+    }
     @IBOutlet weak var countryNameLabel: UILabel!
     
     override func awakeFromNib() {

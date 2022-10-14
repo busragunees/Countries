@@ -32,7 +32,7 @@ class SavedViewController: UIViewController {
 }
 
 extension SavedViewController: SavedViewModelProtocol{
-    func didCellItemFetch(_ items: [CountryEntity]?) {
+    func didFecthCountriesFromDB(_ items: [CountryEntity]?) {
         if let items = items {
             savedList = items
             savedTableView.reloadData()
@@ -46,7 +46,12 @@ extension SavedViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: savedCellReuseIdentifier) as! SavedTableViewCell
-        cell.setItem(item: (savedList[indexPath.row]))
+        let item = (savedList[indexPath.row])
+        cell.setItem(item:item)
+        cell.saveIconImage.callback = {
+            StorageManager.shared.deleteCountry(item:item)
+            self.viewModel.getCountries()
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -55,5 +60,4 @@ extension SavedViewController:UITableViewDelegate,UITableViewDataSource{
         detailVC.countryCode = savedList[indexPath.row].code
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
-   
 }

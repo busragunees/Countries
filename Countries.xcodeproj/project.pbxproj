@@ -258,6 +258,7 @@
 		649D456C28F5E4BB0022ACC4 /* vm */ = {
 			isa = PBXGroup;
 			children = (
+				64B25EC428F9B2E60059E553 /* SavedViewModel.swift */,
 			);
 			path = vm;
 			sourceTree = "<group>";
@@ -274,7 +275,6 @@
 		649D456E28F5E4CC0022ACC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				64B25EC428F9B2E60059E553 /* SavedViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

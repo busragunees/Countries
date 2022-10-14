@@ -23,7 +23,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_star" translatesAutoresizingMaskIntoConstraints="NO" id="Cfz-o0-DRQ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_like_active" translatesAutoresizingMaskIntoConstraints="NO" id="Cfz-o0-DRQ">
                         <rect key="frame" x="270" y="25" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="HdT-2a-zdb"/>
@@ -49,6 +49,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icn_star" width="548.18597412109375" height="522.39398193359375"/>
+        <image name="icn_like_active" width="30" height="30"/>
     </resources>
 </document>
