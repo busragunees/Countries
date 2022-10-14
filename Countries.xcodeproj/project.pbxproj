@@ -29,6 +29,8 @@
 		649D457328F5E4E90022ACC4 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649D457128F5E4E90022ACC4 /* SavedTableViewCell.xib */; };
 		64A59C1528F70C840083BAFA /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A59C1428F70C840083BAFA /* WebKitViewController.swift */; };
 		64B25EC128F8B1C70059E553 /* SVGImgProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B25EC028F8B1C70059E553 /* SVGImgProcessor.swift */; };
+		64B25EC328F9A92A0059E553 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B25EC228F9A92A0059E553 /* StorageManager.swift */; };
+		64B25EC528F9B2E60059E553 /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B25EC428F9B2E60059E553 /* SavedViewModel.swift */; };
 		878CF9B45A0F859F9071947F /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A253B15791C7A89455B277F /* Pods_Countries.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		649D457128F5E4E90022ACC4 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		64A59C1428F70C840083BAFA /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		64B25EC028F8B1C70059E553 /* SVGImgProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImgProcessor.swift; sourceTree = "<group>"; };
+		64B25EC228F9A92A0059E553 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		64B25EC428F9B2E60059E553 /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
 		7A253B15791C7A89455B277F /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F68E4713F4F69F263044AD /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		F48EAA4C37D1D6B8476B02B3 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				649D455128F5A5ED0022ACC4 /* Countries.xcdatamodeld */,
+				64B25EC228F9A92A0059E553 /* StorageManager.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 		649D456E28F5E4CC0022ACC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64B25EC428F9B2E60059E553 /* SavedViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,7 +424,9 @@
 			files = (
 				649D457228F5E4E90022ACC4 /* SavedTableViewCell.swift in Sources */,
 				64B25EC128F8B1C70059E553 /* SVGImgProcessor.swift in Sources */,
+				64B25EC528F9B2E60059E553 /* SavedViewModel.swift in Sources */,
 				640652A528F633BE00FD0B7A /* SavedViewController.swift in Sources */,
+				64B25EC328F9A92A0059E553 /* StorageManager.swift in Sources */,
 				6406529628F607D900FD0B7A /* CountryResponseModel.swift in Sources */,
 				649D454928F5A5ED0022ACC4 /* AppDelegate.swift in Sources */,
 				6406529828F60FD900FD0B7A /* CountryListRequestModel.swift in Sources */,

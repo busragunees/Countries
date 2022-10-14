@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HomeViewModelProtocol:AnyObject{
-    func didCellItemFetch(_ items: [Country]?) //
+    func didCellItemFetch(_ items: [Country]?) 
     func showEmptyView()
     func hideEmptyView()
     func showError()

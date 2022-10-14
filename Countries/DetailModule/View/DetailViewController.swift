@@ -27,7 +27,8 @@ class DetailViewController: UIViewController {
     }
     @objc func goToURL(){
         let webKitVC = self.storyboard?.instantiateViewController(withIdentifier: "webKitIdentfy") as! WebKitViewController
-        webKitVC.wikiURL = "https://www.wikidata.org/wiki/" + (country?.wikiDataId)!
+        print("https://www.wikidata.org/wiki/\(String(describing: country?.wikiDataId))")
+        webKitVC.wikiURL = "https://www.wikidata.org/wiki/\(country?.wikiDataId! ?? "")"
         self.navigationController?.pushViewController(webKitVC, animated: true)
     }
 }

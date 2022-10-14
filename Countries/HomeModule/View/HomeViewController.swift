@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     private let countryCellReuseIdentifier = "countryTableViewCell"
     private var countries: [Country]? = []
-    private let viewModel = HomeViewModel() //buraya ne vermek mantıklı?
+    private let viewModel = HomeViewModel()
 
     var bgImage = UIImageView(image: UIImage(named: "view_bg"))
     
@@ -59,13 +59,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return countries?.count ?? 0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailIdentfy") as! DetailViewController
         detailVC.countryCode = countries?[indexPath.row].code
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: countryCellReuseIdentifier) as! CountriesTableViewCell
-        cell.countryNameLabel.text = countries?[indexPath.row].name
+        cell.setItem(item: (countries?[indexPath.row])!)
         return cell
     }
 }

@@ -21,4 +21,10 @@ class SavedTableViewCell: UITableViewCell {
 
     }
     
+    func setItem(item: CountryEntity) {
+        countryNameLabel.text = item.name
+        self.saveIconImage.callback = {
+           
+        }
+    }
 }

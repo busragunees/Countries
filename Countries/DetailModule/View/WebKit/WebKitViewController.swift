@@ -6,13 +6,20 @@
 //
 
 import UIKit
+import WebKit
 
 class WebKitViewController: UIViewController {
 
-    var wikiURL: String?
+    @IBOutlet weak var webView: WKWebView!
+    
+    var wikiURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("web kit url", wikiURL)
+        if let url = URL.init(string: wikiURL){
+            let urlRequest = URLRequest.init(url: url)
+            webView.load(urlRequest)
+        }
     }
 }
