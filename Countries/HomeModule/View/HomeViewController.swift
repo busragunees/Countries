@@ -14,16 +14,13 @@ class HomeViewController: UIViewController {
     private let viewModel = HomeViewModel()
     private let savedViewModel = SavedViewModel()
     
-    var bgImage = UIImageView(image: UIImage(named: "view_bg"))
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        self.homeTableView.backgroundView = bgImage
-        bgImage.contentMode = .scaleToFill
-       
     }
+    
     override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         viewModel.getCountries()
     }
     
@@ -42,7 +39,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewModelProtocol {
     func didCellItemFetch(_ items: [Country]?) {
-        print("items", items)
         countries = items
         savedViewModel.getCountries()
         homeTableView.reloadData()
@@ -68,7 +64,6 @@ extension HomeViewController: SavedViewModelProtocol{
                 if ((items.contains(where: {
                     $0.code == item.code
                 }))){
-                    print("index", index)
                     self.countries?[index].isSaved = true
                 }
             }

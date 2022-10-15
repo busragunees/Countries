@@ -15,8 +15,7 @@ class NetworkManager {
     let headers : HTTPHeaders = [
         "Accept": "*/*",
         "User-Agent": "Mozilla/5.0 (compatible; Rigor/1.0.0; http://rigor.com)",
-        "X-RapidAPI-Key": "c66783c548msh8898a7af55764b3p13af91jsne204cd1f9c4e",
-       // "X-RapidAPI-Key": "17587e2df3msh770e3ef00f6c673p11e429jsn25b252c89814", benim key
+        "X-RapidAPI-Key": "17587e2df3msh770e3ef00f6c673p11e429jsn25b252c89814",
         "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com"
     ]
     //Alamofire generic olarak fetch edilir.
@@ -88,7 +87,6 @@ class NetworkManager {
                 complition(countryModel)
             case .failure(let error):
                 fail()
-                print("bu", error )
                 break
             }
         }
@@ -104,7 +102,6 @@ class NetworkManager {
                 complition(countryModel)
             case .failure(let error):
                 fail()
-                print("bu", error )
                 break
             }
         }

@@ -24,10 +24,10 @@ class DetailViewController: UIViewController {
         viewModel.viewDelegate = self
         viewModel.getCountryDetails(countryId: countryCode ?? "")
         self.viewInfoBtn.addTarget(self, action: #selector(goToURL), for: .touchUpInside)
+        self.tabBarController?.tabBar.isHidden = true
     }
     @objc func goToURL(){
         let webKitVC = self.storyboard?.instantiateViewController(withIdentifier: "webKitIdentfy") as! WebKitViewController
-        print("https://www.wikidata.org/wiki/\(String(describing: country?.wikiDataId))")
         webKitVC.wikiURL = "https://www.wikidata.org/wiki/\(country?.wikiDataId! ?? "")"
         self.navigationController?.pushViewController(webKitVC, animated: true)
     }
@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController: DetailsViewModelProtocol {
     func didCellItemFetch(_ detail: CountryDetail?) {
         country = detail
-        self.detailImage.kf.setImage(with: URL(string: detail?.flagImageUri ?? ""), options: [.processor(SVGImgProcessor())])
+        self.detailImage.kf.setImage(with: URL(string: detail?.flagImageUri ?? ""), placeholder: UIImage(named: "placeholder"), options: [.processor(SVGImgProcessor())])
         self.countryCodeLabel.text = detail?.code
         self.countryNameLabel.text = detail?.name
     }

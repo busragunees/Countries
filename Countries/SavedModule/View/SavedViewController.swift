@@ -23,6 +23,7 @@ class SavedViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         viewModel.getCountries()
     }
     

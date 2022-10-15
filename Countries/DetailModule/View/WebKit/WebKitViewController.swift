@@ -16,7 +16,6 @@ class WebKitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("web kit url", wikiURL)
         if let url = URL.init(string: wikiURL){
             let urlRequest = URLRequest.init(url: url)
             webView.load(urlRequest)

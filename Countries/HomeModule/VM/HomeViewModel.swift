@@ -19,8 +19,7 @@ class HomeViewModel{
     weak var viewDelegate: HomeViewModelProtocol?
     
     func getCountries() {
-        NetworkManager.instance.getCountries { countryResponse in // countryResponse: apiden gelen Network man. dan gelen reponse
-            print("items yani response geliyor mu", countryResponse?.data?.count)
+        NetworkManager.instance.getCountries { countryResponse in
             if (countryResponse?.data?.isEmpty == false)
             {
             self.viewDelegate?.hideEmptyView()
@@ -30,8 +29,7 @@ class HomeViewModel{
         fail: {
             self.viewDelegate?.showEmptyView()
             self.viewDelegate?.showError()
-            print("data gelmiyor")
         }
     }
 }
-//-protokoller ile- apiden gelen countryResponse, HomeViewController'a aktarılır.
+

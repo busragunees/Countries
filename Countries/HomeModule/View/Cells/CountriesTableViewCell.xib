@@ -11,15 +11,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="countryTableViewCell" rowHeight="92" id="KGk-i7-Jjw" customClass="CountriesTableViewCell" customModule="Countries" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="280" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="330" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="280" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="330" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNm-cq-FRF">
-                        <rect key="frame" x="16" y="8" width="248" height="77.666666666666671"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="displayP3"/>
+                        <rect key="frame" x="16" y="8" width="298" height="77.666666666666671"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ülke" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUx-Ep-G71">
+                                <rect key="frame" x="68" y="26" width="42" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_world" translatesAutoresizingMaskIntoConstraints="NO" id="GxY-Z8-FRh">
+                                <rect key="frame" x="12" y="18" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i9Z-A7-adK"/>
+                                    <constraint firstAttribute="width" constant="40" id="nCH-4z-pG8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tUx-Ep-G71" firstAttribute="top" secondItem="LNm-cq-FRF" secondAttribute="top" constant="26" id="91K-i3-IY1"/>
+                            <constraint firstAttribute="bottom" secondItem="GxY-Z8-FRh" secondAttribute="bottom" constant="19.670000000000002" id="BQg-Gf-hhZ"/>
+                            <constraint firstItem="GxY-Z8-FRh" firstAttribute="leading" secondItem="LNm-cq-FRF" secondAttribute="leading" constant="12" id="DBB-7s-ozY"/>
+                            <constraint firstItem="GxY-Z8-FRh" firstAttribute="top" secondItem="LNm-cq-FRF" secondAttribute="top" constant="18" id="YTH-6e-cde"/>
+                            <constraint firstItem="tUx-Ep-G71" firstAttribute="leading" secondItem="GxY-Z8-FRh" secondAttribute="trailing" constant="16" id="bCl-vK-gGY"/>
+                            <constraint firstAttribute="bottom" secondItem="tUx-Ep-G71" secondAttribute="bottom" constant="27.670000000000002" id="hkI-gk-J93"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="24"/>
@@ -29,14 +52,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ülke" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUx-Ep-G71">
-                        <rect key="frame" x="40" y="34" width="38.333333333333343" height="24"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_star" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-rR-4sF">
-                        <rect key="frame" x="195" y="25" width="40" height="40"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_like" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-rR-4sF">
+                        <rect key="frame" x="245" y="25" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="46h-sU-KXK"/>
                             <constraint firstAttribute="width" constant="40" id="8T7-JH-Vq0"/>
@@ -46,13 +63,10 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="tUx-Ep-G71" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="34" id="3Br-yn-Crd"/>
                     <constraint firstAttribute="trailing" secondItem="LNm-cq-FRF" secondAttribute="trailing" constant="16" id="EoC-rS-7RL"/>
-                    <constraint firstItem="tUx-Ep-G71" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="I3b-Fe-INg"/>
                     <constraint firstAttribute="trailing" secondItem="qPa-rR-4sF" secondAttribute="trailing" constant="45" id="MuU-4x-hug"/>
                     <constraint firstItem="qPa-rR-4sF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="O92-b6-bQt"/>
                     <constraint firstItem="LNm-cq-FRF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Xes-Q1-oGN"/>
-                    <constraint firstAttribute="bottom" secondItem="tUx-Ep-G71" secondAttribute="bottom" constant="35.670000000000002" id="dCg-dQ-KMd"/>
                     <constraint firstAttribute="bottom" secondItem="qPa-rR-4sF" secondAttribute="bottom" constant="27" id="f5I-sR-DXO"/>
                     <constraint firstItem="LNm-cq-FRF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="t4T-dq-D1s"/>
                     <constraint firstAttribute="bottom" secondItem="LNm-cq-FRF" secondAttribute="bottom" constant="8" id="tdo-8I-BBQ"/>
@@ -79,6 +93,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icn_star" width="548.18597412109375" height="522.39398193359375"/>
+        <image name="icn_like" width="35" height="35"/>
+        <image name="icn_world" width="2000" height="2000"/>
     </resources>
 </document>
