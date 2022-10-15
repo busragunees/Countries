@@ -9,10 +9,12 @@
 - App Icon
 <img src="https://github.com/busragunees/Countries/blob/main/screenshots/appicon.png" width="200" /> 
 - Views
+<p>
 <img src="https://github.com/busragunees/Countries/blob/main/screenshots/home.png" width="200" /> 
 <img src="https://github.com/busragunees/Countries/blob/main/screenshots/saved_view.png" width="200" /> 
 <img src="https://github.com/busragunees/Countries/blob/main/screenshots/detaill_view.png" width="200" />
 <img src="https://github.com/busragunees/Countries/blob/main/screenshots/withPlaceholder_view.png" width="200" />
+<p/>
 
 ## Tools
 
